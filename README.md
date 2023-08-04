@@ -1,2 +1,0 @@
-# RateMyHousing-web
- 
