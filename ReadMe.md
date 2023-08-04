@@ -1,5 +1,5 @@
 
-![RMP Logo](RMP_Logo.png =250x250)
+![RMP Logo](RMP_Logo.png width="100")
 
 # About
 
