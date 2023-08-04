@@ -1,13 +1,13 @@
 
-![RMP Logo](RMP_Logo.png | width=100)
+![RMP Logo](RMP_Logo.png =250x250)
 
 # About
 
-#Problem Statement
+# Problem Statement
 Within the realm of contemporary housing websites, property listings are predominantly published by the property owners themselves. However, these postings occasionally exhibit deficiencies and misrepresentations, thereby potentially leading tenants and buyers astray. 
 
 
-#What are we creating? 
+# What are we creating? 
 RateMyHousing stands apart as a unique website where individuals who have personally resided in the properties take the helm by providing comments and feedback. Through this distinct approach, the platform offers an exclusive perspective, allowing users to access valuable insights and genuine recommendations directly from those who have experienced living in rentals or properties. In essence, the tenants and former occupants play a pivotal role in shaping the centralized information center, guiding others in making informed decisions throughout their housing journey.
 
 
