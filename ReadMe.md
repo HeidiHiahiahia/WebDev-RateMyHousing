@@ -1,17 +1,14 @@
 
-![RMP Logo](RMP_Logo.png)
+![RMP Logo](RMP_Logo.png | width=100)
 
 # About
 
-Rate my property is a website that provides a platform for users to anonymously review and rate their housings (rentals, properties, etc.). This will serve as centralized information center for tenants and property buyers to seek factual recommendations/suggestions about potential rentals and help in their decision-making process.
+#Problem Statement
+Within the realm of contemporary housing websites, property listings are predominantly published by the property owners themselves. However, these postings occasionally exhibit deficiencies and misrepresentations, thereby potentially leading tenants and buyers astray. 
 
-The ability to anonymously post reviews will encourage candid and more genuine feedback. On current housing websites, the properties are posted by the owners.
 
-The information sometimes can be incomplete and deceiving, which may mislead tenants and buyers. Our objective is to offer valuable guidance from people who have lived in a particular house or neighborhood to the ones seeking a home in the same house or similar neighborhood.The solution will be developed in a decoupled architecture. Such an approach also allows for development of various frontend applications.
-
-## Why RateMyProperty ?
-
-Currently existing similar websites only provide the way to connect property owners to the buyers and renters but Rate my property helps them gain insights about the property from previous users themselves. These insights are helpful in terms of providing information. The review and the rating of the property assists tenantsand buyersin making decision about rentingor buying a property.
+#What are we creating? 
+RateMyHousing stands apart as a unique website where individuals who have personally resided in the properties take the helm by providing comments and feedback. Through this distinct approach, the platform offers an exclusive perspective, allowing users to access valuable insights and genuine recommendations directly from those who have experienced living in rentals or properties. In essence, the tenants and former occupants play a pivotal role in shaping the centralized information center, guiding others in making informed decisions throughout their housing journey.
 
 
 # Tech
