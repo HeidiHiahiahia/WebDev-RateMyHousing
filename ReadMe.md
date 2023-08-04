@@ -1,5 +1,5 @@
 
-![RMP Logo](RMP_Logo.png width="100")
+![RMP Logo](RMP_Logo.png)
 
 # About
 
