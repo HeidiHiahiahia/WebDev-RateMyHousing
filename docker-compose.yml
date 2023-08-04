@@ -1,0 +1,48 @@
+version: '3'
+services:
+  mongo:
+    container_name: mongo
+    volumes:
+      - ./data/db:/data/db
+      - ./rs-init.sh:/scripts/rs-init.sh
+
+    image: mongo:4.4
+    ports: 
+      - 27017:27017
+    command:
+        [
+          "/bin/sh",
+          "-c",
+          "mongod --bind_ip_all --replSet 'rs0'",
+        ]
+  app:
+    container_name: rmh_server
+    restart: always
+    build: ./ratemyhousing-server/.
+    ports:      
+      - 8000:8000
+    links:
+      - mongo
+    depends_on:
+      - mongo
+  client: 
+    container_name: rmh_client
+    restart: always
+    depends_on:
+      - app
+      - mongo
+    ports:
+      - 80:3000
+    build: ./ratemyhousing-client/.
+    command: 
+        [
+          "/bin/sh",
+          "-c",
+          "npm run dev",
+        ]
+    # command:
+    #     [
+    #       "/bin/sh",
+    #       "-c",
+    #       "npm run start",
+    #     ]

@@ -1,0 +1,59 @@
+localhost:8000/review/621d3f4d754997df73208f27
+Content-Type: application/json
+
+{
+    "parent_property_id": "621d3f4d754997df73208f27",
+    "bedNum":1,
+    "bathNum": 1,
+    "landlordData" : "im landlord",
+    "costReview": 1000,
+    "overallRatingReview": 5,
+    "landlordRating":2,
+    "neighborhood":false,
+    "crowdedness": true,
+    "cleanliness": false,
+    "accessibility": true,
+    "textReview": "this is textReview",
+    "voteUp":0,
+    "voteDown":0,
+    "flags": 0,
+    "datePosted":"2021-1-1",
+    "pictures":[],
+    "comments":[]
+}
+###
+GET http://localhost:8000/review/621d40f6562f1ed0366a2a4b
+
+
+###
+
+PUT http://localhost:8000/review/621d40f6562f1ed0366a2a4b
+Content-Type: application/json
+
+{
+    "review": {
+        "_id": "621d40f6562f1ed0366a2a4b",
+        "parent_property_id": "621d3f4d754997df73208f27",
+        "bedNum": 2344,
+        "bathNum": 1,
+        "landlordData": "im landlord",
+        "costReview": 1000,
+        "overallRatingReview": 5,
+        "landlordRating": 2,
+        "neighborhood": false,
+        "crowdedness": true,
+        "cleanliness": false,
+        "accessibility": true,
+        "textReview": "this is textReview",
+        "voteUp": 0,
+        "voteDown": 111,
+        "flags": 0,
+        "datePosted": "2021-01-01T05:00:00.000Z",
+        "pictures": [],
+        "comments": []
+    }
+}
+
+
+###
+DELETE http://localhost:8000/review/621d40f6562f1ed0366a2a4b

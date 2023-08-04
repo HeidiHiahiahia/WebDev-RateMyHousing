@@ -1,0 +1,42 @@
+GET http://localhost:8000/auth/adminTest
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QxQGV4YW1wbGUuY29tIiwibmFtZSI6InpldXMxMjMiLCJyb2xlIjoiYmFzaWMiLCJpYXQiOjE2NDczODAxNzYsImV4cCI6MTY0NzM4MDc3Nn0.SrgBi9mUkBAI046THvRdJumGf0-OJpv7nt5HIT_oKlc
+
+###
+POST http://localhost:8000/auth/login
+Content-Type: application/json
+
+
+{
+    "email":"test1@example.com",
+    "password":"testuser123"
+}
+
+###
+
+POST http://localhost:8000/auth/signup
+Content-Type: application/json
+
+
+{
+    "email":"test1@example.com",
+    "password":"testuser123",
+    "phoneNo":"428-885-669",
+    "name":"zeus123"
+}
+###
+POST http://localhost:8000/auth/logout
+Content-Type: application/json
+
+
+{
+    "token": ""
+}
+
+###
+POST http://localhost:8000/auth/token
+Content-Type: application/json
+
+
+{
+    "token": ""
+}

@@ -1,0 +1,43 @@
+POST http://localhost:8000/property/
+Content-Type: application/json
+
+{
+	"name": "Sea side sunny house",
+	"propertyType": "Condo",
+	"address": {
+		"country": "Canada",
+		"state": "British Columbia",
+		"city": "Vancouver",
+		"street": "10 Sunny Side Ave",
+		"unitNum": "100",
+		"postalCode": "L2L6G8"
+	}
+}
+###
+GET http://localhost:8000/property/620b0c5c247f6866a329d984
+
+
+###
+
+PUT http://localhost:8000/property/620b0c5c247f6866a329d984
+Content-Type: application/json
+
+{
+    "property": {
+        "name": "testhouse5",
+        "propertyType": "Apartment",
+        "address": {
+            "country": "Canada",
+            "state": "Qubeq",
+            "city": "Montreal",
+            "street": "Columbia St North",
+            "unitNum": "1000",
+            "postalCode": "N2L6G8"
+        },
+        "overallRating": 5,
+        "cost": 10
+    }
+}
+
+###
+DELETE http://localhost:8000/property/620b0c5c247f6866a329d984

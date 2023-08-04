@@ -1,0 +1,8 @@
+{
+    "db":{
+        "host":"mongodb://host.docker.internal",
+        "port": 27017,
+        "name":"rmh_ci_dev",
+        "dbUrl":"mongodb://host.docker.internal:27017/rmh_ci_dev?replicaSet=rs0"
+    }
+}

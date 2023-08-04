@@ -1,0 +1,35 @@
+###
+POST http://localhost:8000/auth/signup
+Content-Type: application/json
+
+{
+    "email":"BLAK@test.com",
+    "password":"testuser123",
+    "phoneNo":"428-885-669",
+    "name":"zeus123"
+}
+###
+POST http://localhost:8000/user/forgotPassword
+Content-Type: application/json
+
+{
+    "email": "BLAK@test.com"
+}
+###
+POST http://localhost:8000/user/resetPassword
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNwb29reWhhZGVzNzI5OEBnbWFpbC5jb20iLCJpYXQiOjE2NDgzNjQzNzcsImV4cCI6MTY0ODM2NDk3N30.xfMFD8VQuhoqKIHHkE5YvOPj8nE-LmY0sHc_EXWUbsM
+Content-Type: application/json
+
+{
+    "newPass": "funny1234"
+}
+###
+
+POST http://localhost:8000/auth/login
+Content-Type: application/json
+
+
+{
+    "email":"<youremail>@gmail.com",
+    "password":"funny1234"
+}

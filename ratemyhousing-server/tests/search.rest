@@ -1,0 +1,4 @@
+GET http://localhost:8000/search?q=Waterloo
+Content-Type: application/json
+
+###

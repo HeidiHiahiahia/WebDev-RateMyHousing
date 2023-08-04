@@ -1,0 +1,66 @@
+# This file is a template, and might need editing before it works on your project.
+# Official framework image. Look for the different tagged releases at:
+# https://hub.docker.com/r/library/node/tags/
+stages:
+    - build
+    - test
+    - deploy
+
+#Staging
+
+# build_stage:
+#     stage: build
+#     image: node:14.17.5
+#     only:
+#         - stage
+#     script:
+#         - npm run build
+
+image: git.uwaterloo.ca:5050/team27/rate-my-housing-server:latest
+services:
+  - name: mongo:latest
+    alias: mongodb
+    command: [
+          "/bin/sh",
+          "-c",
+          "mongod --logpath /dev/null --bind_ip_all --replSet 'rs0'",
+        ]
+test:
+    stage: test
+    before_script:
+        - echo -n "Installing database dependencies and configs..."
+        - wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc |  apt-key add -
+        - echo "deb http://repo.mongodb.org/apt/debian buster/mongodb-org/5.0 main" |  tee /etc/apt/sources.list.d/mongodb-org-5.0.list
+        - apt-get update
+        - apt-get install -y mongodb-org
+        - mongo --host mongo --eval "rs.initiate()"  
+        - echo -n "Installing required dependencies..."
+        - npm install
+        - echo -n "Running tests using jest"
+        - echo -n "Creating test keys for token testing"
+        - echo REFRESH_TOKEN_SECRET=$(node -e "console.log(require('crypto').randomBytes(256).toString('base64'));") >> .env
+        - echo ACCESS_TOKEN_SECRET=$(node -e "console.log(require('crypto').randomBytes(256).toString('base64'));") >> .env
+        - echo SERVICE=gmail >> .env
+        - echo RMHMAIL=rmhpublicaddrtest@gmail.com >> .env
+        - echo PASS="password123!@test" >> .env
+    script:
+        - npm run ci:test
+
+deploy:
+    tags:
+        - node
+    stage: deploy
+    only:
+        - master
+    before_script:
+        - mkdir -p ~/.ssh
+        - echo -e "$STAGE_SSH_PVT_KEY" > ~/.ssh/id_rsa
+        - chmod 600 ~/.ssh/id_rsa
+        - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+
+    script:
+        - bash ./ci_scripts/gitlab-deploy.sh
+
+    environment:
+        name: rmh_server
+        url: http://34.218.112.35/

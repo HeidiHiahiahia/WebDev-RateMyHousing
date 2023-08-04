@@ -1,0 +1,22 @@
+{
+    "app":{
+        "port":8000,
+        "settings":{
+            "reviews":{
+            "maxflags": 5
+           },
+           "tokens":{
+               "expiry":"10m"
+           }
+        },
+        "client":{
+            "url":"http://localhost:3000"
+        }
+    },
+    "db":{
+        "host":"mongodb://127.0.0.1",
+        "port": 27017,
+        "name":"db",
+        "dbUrl":"mongodb://127.0.0.1:27017/rmh?replicaSet=rs0"
+    }
+}

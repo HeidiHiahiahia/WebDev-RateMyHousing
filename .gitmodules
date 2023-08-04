@@ -1,0 +1,6 @@
+[submodule "ratemyhousing-server"]
+	path = ratemyhousing-server
+	url = git@github.com:mhdsuhail172/ratemyhousing-server.git
+[submodule "ratemyhousing-client"]
+	path = ratemyhousing-client
+	url = git@github.com:mhdsuhail172/ratemyhousing-client.git

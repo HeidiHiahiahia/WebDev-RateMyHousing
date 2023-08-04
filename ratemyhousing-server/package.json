@@ -1,0 +1,48 @@
+{
+  "name": "rate-my-housing-server",
+  "version": "1.0.0",
+  "description": "backend for rate my housing application",
+  "main": "server.js",
+  "scripts": {
+    "start": "export NODE_ENV=production && node server.js",
+    "winstart": "SET NODE_ENV=development&&node server.js",
+    "devStart": "export NODE_ENV=development && nodemon server.js",
+    "ci:test": "export NODE_ENV=test && jest --runInBand --coverage",
+    "wintest": "set NODE_ENV=default && jest --runInBand",
+    "test": "export NODE_ENV=default && jest --runInBand --coverage",
+    "devTest": "export NODE_ENV=development && jest --runInBand"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.uwaterloo.ca/team27/rate-my-housing-server.git"
+  },
+  "keywords": [
+    "node",
+    "express",
+    "mongodb",
+    "mongoose",
+    "jwt",
+    "api"
+  ],
+  "author": "Team27-Backend",
+  "license": "ISC",
+  "dependencies": {
+    "@types/jest": "^27.4.0",
+    "bcrypt": "^5.0.1",
+    "config": "^3.3.7",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.17.2",
+    "handlebars": "^4.7.7",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.1.8",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.7.3",
+    "swagger-jsdoc": "^6.1.0",
+    "swagger-ui-express": "^4.3.0"
+  },
+  "devDependencies": {
+    "jest": "^27.5.1",
+    "supertest": "^6.2.2"
+  }
+}
